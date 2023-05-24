@@ -1,35 +1,30 @@
-// Using the (*) will import all of the exports from a file and put it in a object
-import * as usersAPI from './users-api';
+import * as usersAPI  from './users-api';
 
 export async function signUp(userData) {
-  // Delegate the network request code to the users-api.js API module
-  // which will ultimately return a JSON Web Token (JWT)
+  // Delete the network request code to the
+  // users-api.js module which will ultimately
+  // return the JWT
   const token = await usersAPI.signUp(userData);
-
-  // Persist the token
+  // Persist the token to localStorage
   localStorage.setItem('token', token);
-  // return user not the token
   return getUser();
 }
 
 export async function login(credentials) {
   const token = await usersAPI.login(credentials);
-
-  // Persist the token
+  // Persist the token to localStorage
   localStorage.setItem('token', token);
-
   return getUser();
 }
 
 export function getToken() {
-  // getItem returns null if there's no string
   const token = localStorage.getItem('token');
+  // getItem will return null if no key
   if (!token) return null;
-  // Obtain the payload of the token
   const payload = JSON.parse(atob(token.split('.')[1]));
-  // A JWT's exp is expressed in seconds, not milliseconds, so convert
+  // A JWT's expiration is expressed in seconds, not miliseconds
   if (payload.exp < Date.now() / 1000) {
-    // Token has expired - remove it from localStorage
+    // Token has expired
     localStorage.removeItem('token');
     return null;
   }
@@ -38,21 +33,9 @@ export function getToken() {
 
 export function getUser() {
   const token = getToken();
-  // If there's a token, return the user in the payload, otherwise return null
   return token ? JSON.parse(atob(token.split('.')[1])).user : null;
 }
 
 export function logOut() {
   localStorage.removeItem('token');
-}
-
-export function checkToken() {
-  // Just so that you don't forget how to use .then
-  return (
-    usersAPI
-      .checkToken()
-      // checkToken returns a string, but let's
-      // make it a Date object for more flexibility
-      .then((dateStr) => new Date(dateStr))
-  );
 }

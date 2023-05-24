@@ -14,7 +14,7 @@ module.exports = function (req, res, next) {
       // If invalid token, err will be set
       req.user = err ? null : decoded.user;
       // If your app cares... (optional)
-      req.exp = err ? null : new Date(decoded.exp * 1000); // minutes? 
+      req.exp = err ? null : new Date(decoded.exp * 1000);
       return next();
     });
   } else {

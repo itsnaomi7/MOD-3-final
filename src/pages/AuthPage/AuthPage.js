@@ -1,25 +1,24 @@
+import { useState } from 'react';
+import styles from './AuthPage.module.css';
+import LoginForm from '../../components/LoginForm/LoginForm';
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
-import LoginForm from '../../components/LoginForm/LoginForm'
-
-const daisyMae = {
-  textAlign: "center",
-  width: "25vw",
-  height: "35vh",
-  padding: "2px",
-  
-
-
-};
+import Logo from '../../components/Logo/Logo';
 
 export default function AuthPage({ setUser }) {
-  return (
-    <>
-  <div style={daisyMae}><img src={`daisy-mae.png`}></img></div>
+  const [showLogin, setShowLogin] = useState(true);
+
   
-      <h1>AuthPage</h1>
-      <SignUpForm setUser={setUser} />
-      <LoginForm setUser={setUser} />
-      
-    </>
+
+  return (
+    <main className={styles.AuthPage}>
+      <div>
+        <Logo />
+        <h3 onClick={() => setShowLogin(!showLogin)}>{showLogin ? 'SIGN UP' : 'LOG IN'}</h3>
+      </div>
+      {showLogin ? <LoginForm setUser={setUser} /> : <SignUpForm setUser={setUser} />}
+    </main>
+    
   );
 }
+
+

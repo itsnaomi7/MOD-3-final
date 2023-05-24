@@ -1,13 +1,13 @@
 /* CSS Custom Properties */
 :root {
-  --white: #FFFFFF;
-  --tan-1: #FBF9F6;
-  --tan-2: #E7E2DD;
+  --white: #cbdfc7;
+  --green-1: #2f4d11;
+  --green-2: #1f9355;
   --tan-3: #E2D9D1;
   --tan-4: #D3C1AE;
-  --orange: #F67F00;
-  --text-light: #968c84;
-  --text-dark: #615954;
+  --blue: #1e6c88;
+  --text-light: #995e2d;
+  --text-dark: #371805;
 }
 
 *, *:before, *:after {
@@ -16,73 +16,80 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: -apple-system, BlinkMacSystemFont, 'Handlee', 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("../public/fruit1.jpg");
-  padding: 2vmin;
-  height: 50vh;
+  background-image: url("./images/fruit1.jpg");
+  background-size:cover;
+  padding: 10vmin;
+  height: 100vh;
+  cursor: pointer;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+    padding: 10vmin;
 }
 
 #root {
-  height: 100%;
+  height: 100vmin;
 }
 
 .align-ctr {
   text-align: center;
+  
 }
 
 .align-rt {
   text-align: right;
+  
 }
+
 
 .smaller {
   font-size: smaller;
 }
 
-.flex-ctr-ctr {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .flex-col {
   flex-direction: column;
+  
 }
 
 .flex-j-end {
   justify-content: flex-end;
+  
 }
 
 .scroll-y {
-  overflow-y: scroll;
+  overflow-y:hidden;
+  
 }
 
 .section-heading {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: var(--tan-1);
+  background-color: #1f9355;
   color: var(--text-dark);
-  border: .1vmin solid var(--tan-3);
+  border: .1vmin solid brown;
   border-radius: 1vmin;
-  padding: .6vmin;
+  padding: .3vmin;
   text-align: center;
-  font-size: 2vmin;
+  font-size: 5vmin;
 }
 
 .form-container {
+  /* background-color: #27a29e; */
   padding: 3vmin;
-  background-color: var(--tan-1);
-  border: .1vmin solid var(--tan-3);
-  border-radius: 1vmin;
+  border: .1vmin solid #1e6c88;
+  border-radius: 2vmin;
+  
+ 
 }
 
 p.error-message {
@@ -93,20 +100,23 @@ p.error-message {
 form {
   display: grid;
   grid-template-columns: 1fr 3fr;
-  gap: 1.25vmin;
-  color: var(--text-light);
+  gap: 1.1vmin;
+  color: #713c11;
+  
 }
 
 label {
-  font-size: 2vmin;
+  font-size: 4vmin;
   display: flex;
   align-items: center;
+  padding: 1vmin;
+  height: 12vmin;
 }
 
 input {
   padding: 1vmin;
   font-size: 2vmin;
-  border: .1vmin solid var(--tan-3);
+  border: .1vmin solid #dea97e;
   border-radius: .5vmin;
   color: var(--text-dark);
   background-image: none !important; /* prevent lastpass */
@@ -114,37 +124,35 @@ input {
 }
 
 input:focus {
-  border-color: var(--orange);
+  border-color: #2f4d11;
 }
 
 button, a.button {
   margin: 1vmin;
   padding: 1vmin;
   color: var(--white);
-  background-color: var(--orange);
+  background-color: #1e6c88;
   font-size: 2vmin;
   font-weight: bold;
   text-decoration: none;
   text-align: center;
-  border: .1vmin solid var(--tan-2);
-  border-radius: .5vmin;
   outline: none;
   cursor: pointer;
 }
 
 button.btn-sm {
   font-size: 1.5vmin;
-  padding: .6vmin .8vmin;
+  padding: .2vmin .8vmin;
 }
 
 button.btn-xs {
-  font-size: 1vmin;
+  font-size: 3vmin;
   padding: .4vmin .5vmin;
 }
 
 button:disabled, form:invalid button[type="submit"] {
   cursor: not-allowed;
-  background-color: rgb(54, 99, 54);
+  background-color: #54770f;
 }
 
 button[type="submit"] {

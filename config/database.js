@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 mongoose.connect(process.env.DATABASE_URL, {
   useNewUrlParser: true,
@@ -7,6 +7,6 @@ mongoose.connect(process.env.DATABASE_URL, {
 
 const db = mongoose.connection;
 
-db.on("connected", () => {
-  console.log(`Connected to ${db.name}`);
+db.on('connected', () => {
+  console.log(`Connected to ${db.name} at ${db.port}`);
 });

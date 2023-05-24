@@ -21,9 +21,9 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--tan-4);
+  background-image: url("../public/fruit1.jpg");
   padding: 2vmin;
-  height: 100vh;
+  height: 50vh;
 }
 
 code {
@@ -144,7 +144,7 @@ button.btn-xs {
 
 button:disabled, form:invalid button[type="submit"] {
   cursor: not-allowed;
-  background-color: var(--tan-4);
+  background-color: rgb(54, 99, 54);
 }
 
 button[type="submit"] {

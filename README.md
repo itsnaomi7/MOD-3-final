@@ -15,3 +15,9 @@ I wanted to make a produce subscription app, kind of like Imperfect Foods.
 # Stretch goals
 - I want to have the login page fade into the next page.
 - I also want to create a dark mode, with the theme remaining similiar but not as bright. 
+
+# Getting Started 
+
+# [Trello Link]([https://6442ded12261b4047aaf33b5--dashing-macaron-94372e.netlify.app/](https://trello.com/b/vQgiC6Mb/mod-3-project))
+
+# [Render Link (having issues with this)]()
